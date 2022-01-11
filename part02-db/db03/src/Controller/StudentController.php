@@ -28,11 +28,8 @@ class StudentController extends AbstractController
     }
 
     #[Route('/student/{id}', name: 'student_show')]
-    public function show(int $id, ManagerRegistry $doctrine): Response
+    public function show(Student $student): Response
     {
-        $studentRepository = $doctrine->getRepository(Student::class);
-        $student = $studentRepository->find($id);
-
         $template = 'student/show.html.twig';
         $args = [
             'student' => $student
@@ -67,13 +64,10 @@ class StudentController extends AbstractController
     }
 
     #[Route('/student/delete/{id}', name: 'student_delete')]
-    public function delete(int $id, ManagerRegistry $doctrine)
+    public function delete(Student $student, ManagerRegistry $doctrine)
     {
-        // get StudentRepository object
-        $studentRepository = $doctrine->getRepository(Student::class);
-
-        // find the student with this ID
-        $student = $studentRepository->find($id);
+        // store ID so can report it later
+        $id = $student->getId();
 
         // tells Doctrine you want to (eventually) delete the Student (no queries yet)
         $em = $doctrine->getManager();
@@ -86,19 +80,8 @@ class StudentController extends AbstractController
     }
 
     #[Route('/student/update/{id}/{newFirstName}/{newSurname}', name: 'student_update')]
-    public function update(int $id, string $newFirstName, string $newSurname, ManagerRegistry $doctrine)
+    public function update(Student $student, string $newFirstName, string $newSurname, ManagerRegistry $doctrine)
     {
-        // get StudentRepository object
-        $studentRepository = $doctrine->getRepository(Student::class);
-
-        $student = $studentRepository->find($id);
-
-        if (!$student) {
-            throw $this->createNotFoundException(
-                'No student found for id '.$id
-            );
-        }
-
         $student->setFirstName($newFirstName);
         $student->setSurname($newSurname);
 
