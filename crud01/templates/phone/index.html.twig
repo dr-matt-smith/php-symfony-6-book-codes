@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Phone index{% endblock %}
+
+{% block body %}
+    <h1>Phone index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Model</th>
+                <th>Memory</th>
+                <th>Manufacturer</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for phone in phones %}
+            <tr>
+                <td>{{ phone.id }}</td>
+                <td>{{ phone.model }}</td>
+                <td>{{ phone.memory }}</td>
+                <td>
+                    <a href="{{ path('make_show', {'id': phone.manufacturer.id}) }}">
+                    {{ phone.manufacturer }}</td>
+                    </a>
+                <td>
+                    <a href="{{ path('phone_show', {'id': phone.id}) }}">show</a>
+                    <a href="{{ path('phone_edit', {'id': phone.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('phone_new') }}">Create new</a>
+{% endblock %}

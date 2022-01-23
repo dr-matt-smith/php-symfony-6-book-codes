@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Make{% endblock %}
+
+{% block body %}
+    <h1>Create new Make</h1>
+
+    {{ include('make/_form.html.twig') }}
+
+    <a href="{{ path('make_index') }}">back to list</a>
+{% endblock %}

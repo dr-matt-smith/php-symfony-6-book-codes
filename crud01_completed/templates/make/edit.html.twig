@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Make{% endblock %}
+
+{% block body %}
+    <h1>Edit Make</h1>
+
+    {{ include('make/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('make_index') }}">back to list</a>
+
+    {{ include('make/_delete_form.html.twig') }}
+{% endblock %}

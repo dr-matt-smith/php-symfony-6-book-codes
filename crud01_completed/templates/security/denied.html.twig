@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}access denied error!{% endblock %}
+
+{% block body %}
+Sorry - you have been denied access
+
+    <p>
+            You are logged in as {{ app.user.username }},
+        <br>
+
+        you need to
+        <a href="{{ path('app_logout') }}">Logout</a>
+        then try to access <b>/user/</b> and login again as a user with ROLE_ADMIN priviledges ...
+{% endblock %}
