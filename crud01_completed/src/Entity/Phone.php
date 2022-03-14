@@ -17,7 +17,7 @@ class Phone
     private $model;
 
     #[ORM\Column(type: 'integer')]
-    private $memory;
+    private int $memory;
 
     #[ORM\ManyToOne(targetEntity: Make::class, inversedBy: 'phones')]
     private $manufacturer;
