@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} hello world {% endblock %}
+
+{% block body %}
+
+
+
+    {% if colors is defined %}
+    <ul>
+        {% for property, color in colors %}
+            <li>
+                {{ property }} = {{ color }}
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        NOTE - no colours found in the session...
+    {% endif %}
+
+    <p>
+        Hello World
+    </p>
+
+{% endblock %}

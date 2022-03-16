@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BasketController!{% endblock %}
+
+{% block body %}
+
+
+    <h1>Basket contents</h1>
+    {% set basket = app.session.get('basket') %}
+
+    {% if basket is null %}
+        <p>
+        </p>
+    {% else %}
+        <ul>
+            {% for product in basket %}
+                <li>
+                    <hr>
+                    {{ product.id }} :: {{ product.description }}
+                    <a href="{{ path('basket_delete', { 'id': product.id }) }}">(remove)</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <p>
+        <a href="{{ path('basket_clear') }}">CLEAR all items in basket</a>
+    </p>
+
+
+{% endblock %}

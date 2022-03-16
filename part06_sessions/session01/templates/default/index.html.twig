@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} hello world {% endblock %}
+
+{% block body %}
+    <ul>
+        {% for property, color in colors %}
+            <li>
+                {{ property }} = {{ color }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        Hello World
+    </p>
+
+{% endblock %}

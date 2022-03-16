@@ -1,0 +1,59 @@
+{# ------ attempt to read 'colors' from session ----- #}
+    {% set colors = app.session.get('colors') %}
+
+    {# ------ if 'null' then no found in session ----- #}
+    {% if colors is null %}
+        {# ------ set our default colours array ----- #}
+        {% set colors = {
+            'foreground': 'black',
+            'background': 'white'
+        }
+        %}
+    {% endif %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
+        <style>
+            @import '/css/flash.css';
+            body {
+                color: {{ colors['foreground'] }};
+                background-color: {{ colors['background'] }};
+            }
+        </style>
+
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+
+        <ul>
+            <li>
+                <a href="{{ path('app_default') }}">
+                    home
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('pinkblue') }}">
+                    pink and blue in session
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('default_colors') }}">
+                    reset to default colours
+                </a>
+            </li>
+        </ul>
+        <hr>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>
