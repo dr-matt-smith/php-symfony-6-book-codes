@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+        {% endblock %}
+
+        <style>
+            table, td, tr, th {
+                padding: 0.5rem;
+                margin: 0.5rem;
+            }
+
+            table, td {
+                border: solid black 0.1rem;
+            }
+        </style>
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ path('app_product_index') }}">
+                    products
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('app_category_index') }}">
+                    categories
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+        {% block body %}{% endblock %}
+    </body>
+</html>
