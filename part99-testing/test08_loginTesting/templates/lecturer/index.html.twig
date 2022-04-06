@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lecturer index{% endblock %}
+
+{% block body %}
+    <h1>Lecturer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lecturer in lecturers %}
+            <tr>
+                <td>{{ lecturer.id }}</td>
+                <td>{{ lecturer.name }}</td>
+                <td>
+                    <a href="{{ path('app_lecturer_show', {'id': lecturer.id}) }}">show</a>
+                    <a href="{{ path('app_lecturer_edit', {'id': lecturer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_lecturer_new') }}">Create new</a>
+{% endblock %}
