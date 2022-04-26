@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.218849">
+    <testsuite name="Project Test Suite" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.218849">
+      <testsuite name="App\Tests\ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test09_userRoleTest/tests/ModuleCrudTest.php" tests="3" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.218849">
+        <testcase name="testHomePageTitleText" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test09_userRoleTest/tests/ModuleCrudTest.php" line="10" assertions="3" time="0.173543"/>
+        <testcase name="testPublicUserCanNotSeeNewModuleLink" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test09_userRoleTest/tests/ModuleCrudTest.php" line="19" assertions="1" time="0.005803"/>
+        <testcase name="testRoleAdminUserCanSeeNewModuleLink" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test09_userRoleTest/tests/ModuleCrudTest.php" line="29" assertions="1" time="0.039503"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
