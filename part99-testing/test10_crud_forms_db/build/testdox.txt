@@ -1,6 +1,9 @@
+Admin Module Create (App\Tests\AdminModuleCreate)
+ [x] Role admin can add module
+
 Module Crud (App\Tests\ModuleCrud)
  [x] Home page title text
  [x] Public user can not see new module link
  [x] Role admin user can see new module link
- [x] User cannot access module crud access denied exception
+ [x] Access denied for role user when try access module crud
 

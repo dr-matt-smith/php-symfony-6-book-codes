@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+        {% endblock %}
+
+        <style>
+            header {
+                border-bottom: 1px solid black;
+                padding: 1rem;
+                text-align: right;
+            }
+        </style>
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+
+    <header>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            Username:
+            <strong>{{ app.user.email }}</strong>
+            <br>
+            <a href="{{ url('app_logout') }}">logout</a>
+        {% else %}
+            <a href="{{ url('app_login') }}">login</a>
+        {% endif %}
+    </header>
+
+    <nav>
+        <ul>
+
+            <li>
+                <a href="{{ path('home') }}">
+                    home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('uc') }}">
+                    UC diagram
+                </a>
+            </li>
+
+
+            <li>
+                <a href="{{ path('app_module_index') }}">
+                    list all modules
+                </a>
+            </li>
+
+
+            {% if is_granted('ROLE_ADMIN') %}
+            <li>
+                <a href="{{ path('app_module_new') }}" id="new_module_link">
+                    create NEW module
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+        {% block body %}{% endblock %}
+
+
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="5" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.442984">
+    <testsuite name="Project Test Suite" tests="5" assertions="8" errors="0" warnings="0" failures="0" skipped="0" time="0.442984">
+      <testsuite name="App\Tests\AdminModuleCreateTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/AdminModuleCreateTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.270175">
+        <testcase name="testRoleAdminCanAddModule" class="App\Tests\AdminModuleCreateTest" classname="App.Tests.AdminModuleCreateTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/AdminModuleCreateTest.php" line="14" assertions="2" time="0.270175"/>
+      </testsuite>
+      <testsuite name="App\Tests\ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/ModuleCrudTest.php" tests="4" assertions="6" errors="0" warnings="0" failures="0" skipped="0" time="0.172809">
+        <testcase name="testHomePageTitleText" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/ModuleCrudTest.php" line="13" assertions="3" time="0.014489"/>
+        <testcase name="testPublicUserCanNotSeeNewModuleLink" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/ModuleCrudTest.php" line="22" assertions="1" time="0.004412"/>
+        <testcase name="testRoleAdminUserCanSeeNewModuleLink" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/ModuleCrudTest.php" line="32" assertions="1" time="0.006944"/>
+        <testcase name="testAccessDeniedForRoleUserWhenTryAccessModuleCrud" class="App\Tests\ModuleCrudTest" classname="App.Tests.ModuleCrudTest" file="/Users/matt/Documents/Books/php-symfony-6-book-codes/part99-testing/test10_crud_forms_db/tests/ModuleCrudTest.php" line="50" assertions="1" time="0.146964"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
